@@ -32,12 +32,12 @@ class SurveyForm extends React.Component {
 function validate(values) {
     const errors = {};
 
-    errors.emails = validateEmails(values.emails || '');
+    errors.rrecipients = validateEmails(values.recipients || '');
 
     _.each(formFields, ({ name }) => {
         if (!values[name]) {
-            if (name == 'emails')
-                errors.emails = 'You must provide emails';
+            if (name == 'recipients')
+                errors.recipients = 'You must provide emails';
             else
                 errors[name] = `You must provide a ${name}`;
         }
